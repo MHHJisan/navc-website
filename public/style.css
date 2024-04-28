@@ -24,9 +24,16 @@ body {
 
 /* Header styles */
 /* Fixed navbar styles */
-header {
+/* header {
     position: relative; /* Ensure the pseudo-element is positioned relative to the header */
-    padding: 20px 0; /* Padding for the navbar */
+    /* padding: 20px 0; Padding for the navbar */
+/* } 
+
+/* Header styles */
+header {
+    position: relative;
+    padding: 20px 0;
+    background-color: transparent;
 }
 
 header::before {
@@ -42,6 +49,7 @@ header::before {
     opacity: 0.5; /* Set the opacity of the background overlay */
     z-index: -1; /* Ensure the overlay is behind the content */
 }
+
 nav {
     position: fixed;
     top: 0;
@@ -53,14 +61,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 5px; 
-    padding-bottom: 10px;   
+    padding-top: 20px; 
+    padding-bottom: 20px;   
+    transition: background-color 0.3s; /* Smooth transition for background color change */
 }
-
 
 /* Scrolled navbar styles */
 .navbar-scrolled {
-    background-color: #373535; /* Change background color when scrolled */
+    background-color: #eaff00; /* Change background color when scrolled */
     /* Other styles for the scrolled navbar */
 }
 
@@ -69,12 +77,12 @@ nav {
     color: #120897;
     text-decoration: none;
 }
-
 .nav-links {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     align-items: center; 
+    padding-top: 20px;
 }
 
 .nav-links li {
@@ -223,10 +231,89 @@ section h2 {
     object-position: center; /* Center the image within the container */
 }
 
+
+/* Gallery section styles */
+#gallery {
+    padding: 80px 0;
+}
+
+#gallery h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#gallery p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Circular image row styles */
+.image-grid {
+    display: flex;
+    justify-content: flex-end; /* Align images to the right */
+    margin: 0 -10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.column {
+    position: relative; /* Add relative positioning */
+    flex: 0 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.column img {
+    width: 150px; /* Set the width of circular images */
+    height: 150px; /* Set the height of circular images */
+    border-radius: 50%; /* Make images circular */
+    margin: 0 10px; /* Add spacing between images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    transition: transform 0.3s ease; /* Add transition effect for smooth movement */
+}
+
+.column img:hover {
+    transform: translateX(-10px); /* Move images to the left on hover */
+}
+
+.name, .designation, .education {
+    position: absolute;
+    /* bottom: 10px; */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    color: #f90303;
+    font-size: 14px;
+    text-align: center;
+    max-width: calc(100% - 20px); /* Adjust based on padding */
+}
+
+.designation {
+    padding-top: 40px;
+}
+
+.education {
+    padding-top: 100px;
+}
+
+#about {
+    padding-top: 100px;
+}
+
 /* Service section styles */
+
+#services {
+    padding-top: 20px;
+}
+
 .service {
     border: 1px solid #ccc;
     padding: 20px;
+    padding-top: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
